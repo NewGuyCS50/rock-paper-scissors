@@ -8,8 +8,8 @@
 //
 //
 
-let input = prompt("Rock, Paper or Scissors");
-let playerchoice = input.toLowerCase();
+let playerchoice = prompt("Rock, Paper or Scissors").toLowerCase();
+//let playerchoice = input.toLowerCase();
 
 //console.log(playerchoice);
 
@@ -98,9 +98,10 @@ function game()
   }
 
   // second round
+  let  playerchoice2 = prompt("rock paper or scissors").toLowerCase();
 
 
-  let second = playround(playerchoice, getcomputerchoice());
+  let second = playround(playerchoice2, getcomputerchoice());
   
   if (second == "Computer wins")
   {
@@ -113,8 +114,9 @@ function game()
   }
 
   // third round
+  let  playerchoice3 = prompt("rock paper or scissors").toLowerCase();
 
-  let third = playround(playerchoice, getcomputerchoice());
+  let third = playround(playerchoice3, getcomputerchoice());
   
   if (third == "Computer wins")
   {
@@ -127,9 +129,11 @@ function game()
   }
 
   // fourth round
+  let  playerchoice4 = prompt("rock paper or scissors").toLowerCase();
 
 
-  let fourth = playround(playerchoice, getcomputerchoice());
+
+  let fourth = playround(playerchoice4, getcomputerchoice());
   
   if (fourth == "Computer wins")
   {
@@ -143,7 +147,10 @@ function game()
 
   // fifth round
 
-  let fifth = playround(playerchoice, getcomputerchoice());
+ let  playerchoice5 = prompt("rock paper or scissors").toLowerCase();
+
+
+  let fifth = playround(playerchoice5, getcomputerchoice());
   
   if (fifth == "Computer wins")
   {
