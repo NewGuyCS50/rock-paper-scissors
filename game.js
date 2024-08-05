@@ -8,10 +8,55 @@
 //
 //
 
-let playerchoice = prompt("Rock, Paper or Scissors").toLowerCase();
-//let playerchoice = input.toLowerCase();
+//let playerchoice = prompt("Rock, Paper or Scissors").toLowerCase();
+//getcomputerchoice()
 
-//console.log(playerchoice);
+
+let tally = 0;
+let TotalRounds = 5;
+let RoundsPlayed = 0;
+
+
+let playerchoice = "";
+
+
+
+    let btn1 = document.querySelector("#btn1")
+    let btn2 = document.querySelector("#btn2")
+    let btn3 = document.querySelector("#btn3")
+    let btn4 = document.querySelector("#btn4")
+    let div = document.querySelector("#div")
+
+    btn1.addEventListener("click", () => {
+       playerchoice = "rock";
+      godly();
+    })
+    
+
+    btn2.addEventListener("click", () => {
+      playerchoice = "paper"
+       godly();  
+    })
+   
+
+    btn3.addEventListener("click", () => {
+      playerchoice = "scissors"
+       godly();
+    })
+   
+    div.textContent = `Your score is ${tally}`
+
+  
+
+   
+
+
+
+
+
+
+
+
 
 //              Picking computer's choice
 
@@ -36,7 +81,7 @@ function getcomputerchoice ()
 
 }
 
-
+function godly(){
 
 //               For playing a single round
 
@@ -67,7 +112,7 @@ function playround(playerselection, computerselection)
   }
 }
 
-//console.log(playround(playerchoice, getcomputerchoice()))
+
 
 
 // NEW FUNCTION TO GET BEST OUT OF FIVE
@@ -78,10 +123,19 @@ function playround(playerselection, computerselection)
 // it draw do nothing
 // do it five times
 
+
+
+
+
 function game()
 
 {
-  let tally = 0;
+ 
+  
+
+
+  let InterT = 0;
+  
 
   // first round
 
@@ -90,88 +144,45 @@ function game()
   if (first == "Computer wins")
   {
     tally = tally - 1;
+    InterT = InterT - 1;
   }
 
   else if ( first == "You win")
   {
     tally = tally + 1;
+    InterT = InterT + 1;
   }
 
-  // second round
-  let  playerchoice2 = prompt("rock paper or scissors").toLowerCase();
-
-
-  let second = playround(playerchoice2, getcomputerchoice());
+ 
   
-  if (second == "Computer wins")
-  {
-    tally = tally - 1;
-  }
+RoundsPlayed++;
+div.textContent = `Round ${RoundsPlayed} and your score is ` + tally;
+if (RoundsPlayed == TotalRounds)
+{
+  if (tally > 0)
+  {div.textContent = "You Won! Your score is " + tally}
 
-  else if ( second == "You win")
-  {
-    tally = tally + 1;
-  }
+  if (tally < 0)
+  {div.textContent = "You Lost! Your score is " + tally}
 
-  // third round
-  let  playerchoice3 = prompt("rock paper or scissors").toLowerCase();
+  else if (tally == 0)
+  {div.textContent = "Draw! Your score is " + tally}
+}
 
-  let third = playround(playerchoice3, getcomputerchoice());
+
+
+
   
-  if (third == "Computer wins")
-  {
-    tally = tally - 1;
-  }
-
-  else if ( third == "You win")
-  {
-    tally = tally + 1;
-  }
-
-  // fourth round
-  let  playerchoice4 = prompt("rock paper or scissors").toLowerCase();
-
-
-
-  let fourth = playround(playerchoice4, getcomputerchoice());
-  
-  if (fourth == "Computer wins")
-  {
-    tally = tally - 1;
-  }
-
-  else if ( fourth == "You win")
-  {
-    tally = tally + 1;
-  }
-
-  // fifth round
-
- let  playerchoice5 = prompt("rock paper or scissors").toLowerCase();
-
-
-  let fifth = playround(playerchoice5, getcomputerchoice());
-  
-  if (fifth == "Computer wins")
-  {
-    tally = tally - 1;
-  }
-
-  else if ( fifth == "You win")
-  {
-    tally = tally + 1;
-  }
-
 
 
 console.log(tally);
 
-if ( tally == 0)
+if ( InterT == 0)
 {
   return "draw";
 }
 
-else if ( tally > 0)
+else if ( InterT > 0)
 {
   return "You win";
 }
@@ -180,10 +191,18 @@ else {
   return "computer wins";
 }
 
- //return tally;
+
+
+
+
  
 }
 
 console.log(game());
+
+
+
+}
+
 
 
